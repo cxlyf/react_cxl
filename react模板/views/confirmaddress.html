@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="../assets/css/ydui.css" />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="../assets/js/ydui.flexible.js"></script>
+	<title>ATGS</title>
+</head>
+
+<body>
+	<section class="g-flexview">
+
+		<header class="m-navbar">
+			<a href="#" class="navbar-item">
+				<i class="back-ico"></i>
+			</a>
+			<div class="navbar-center">
+				<span class="navbar-title">确认购买</span>
+			</div>
+		</header>
+
+		<div class="g-scrollview">
+			<!-- 地区 -->
+			<div class="m-cell base-padding-tb30">
+				<a class="cell-item" href="javascript:;">
+					<div class="cell-left">
+						<i class="cell-icon icon-location"></i>
+					</div>
+					<div class="cell-left base-flexbox-column">
+						<p>王女士 13922456722</p>
+						<p class="base-font-size26 base-margin-top20">北京市朝阳区望京SOHO</p>
+					</div>
+					<div class="cell-right cell-arrow"></div>
+				</a>
+			</div>
+
+			<!-- 商品列表 -->
+			<div class="base-flexbox base-padding30 base-margin-top20">
+				<div class="base-img base-img-140 base-margin-right12">
+					<img src="../assets/img/item-img.jpg">
+				</div>
+				<div class="base-flexbox-item">
+					<h2 class="base-text-ellipsis base-width450">天然奶糕 奶糕天然粮 10KG</h2>
+					<div class="base-flexbox base-flexbox-between base-margin-top20">
+						<h2 class="base-font-size30 base-margin-right12 base-text-yellow">
+							&yen; 60.
+							<span class="base-font-size26 base-text-yellow">00</span>
+						</h2>
+						<h2 class="base-font-size30 base-margin-right12 base-text-yellow">
+							实付金额 &yen; 60.
+							<span class="base-font-size26 base-text-yellow">00</span>
+						</h2>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- 按钮 -->
+		<div class="base-padding30">
+			<button type="submit" class="btn-block btn-warning radius88">
+				付款
+			</button>
+		</div>
+		
+
+	</section>
+
+<!-- ================================================================================== -->
+<!-- 引入jQuery 2.0+ -->
+<script src="../assets/js/jquery-2.1.4.min.js"></script>
+<!-- 引入YDUI脚本 -->
+<script src="../assets/js/ydui.js"></script>
+<script src="../assets/js/ydui.citys.js"></script>
+<!-- 自定义JS -->
+<script>
+	var $target = $('#J_Address2');
+
+	$target.on('click', function () {
+		$target.citySelect('open');
+	});
+
+	$target.on('done.ydui.cityselect', function (ret) {
+		$(this).val(ret.provance + ' ' + ret.city + ' ' + ret.area);
+	});
+</script>
+</body>
+
+</html>

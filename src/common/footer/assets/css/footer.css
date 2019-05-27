@@ -1,0 +1,97 @@
+.m-tabbar {
+  width: 100%;
+ position:fixed;left:0;right:0;bottom:0;
+  z-index: 100;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: .104rem 0 .07rem;
+  background-color: rgba(255, 255, 255, 1);
+}
+.m-tabbar:after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid #B2B2B2;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+.m-tabbar.tabbar-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 49;
+}
+.tabbar-item {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #979797;
+}
+.tabbar-item.tabbar-active {
+  color: #09BB07;
+}
+.tabbar-item.tabbar-active .tabbar-icon {
+  color: inherit;
+}
+.tabbar-item .badge {
+  position: absolute;
+  top: -0.02rem;
+  left: 100%;
+  z-index: 999;
+  margin-left: -0.15rem;
+}
+.tabbar-icon {
+  height: 0.5832rem;
+  color: #979797;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+.tabbar-icon *:before,
+.tabbar-icon *:after {
+  font-size: 0.54rem !important;
+  display: block;
+}
+.tabbar-icon img {
+  height: 70%;
+}
+.tabbar-txt {
+  display: inline-block;
+  font-size: 0.24rem;
+}

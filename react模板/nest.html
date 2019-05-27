@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="assets/css/ydui.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="assets/js/ydui.flexible.js"></script>
+	<title>ATGS</title>
+</head>
+
+<body>
+	<section class="g-flexview">
+
+		<header class="m-navbar">
+			<a href="#" class="navbar-item">
+				<i class="back-ico"></i>
+			</a>
+			<div class="navbar-center">
+				<span class="navbar-title">甜甜圈的公社</span>
+			</div>
+		</header>
+
+		<div class="g-scrollview">
+
+			<!-- 列表 -->
+			<div id="J_Tab" class="m-tab">
+				<ul class="tab-nav">
+					<li class="tab-nav-item tab-active"><a href="javascript:;">喂养的宝贝们</a></li>
+					<li class="tab-nav-item"><a href="javascript:;">喜欢的宝贝们</a></li>
+				</ul>
+				<div class="tab-panel base-bg-transparent">
+					<div class="tab-panel-item tab-active">
+						<div class="nset-content-box">
+							<div class="base-margin-top60 nest-padding-left">
+								<h2 class="nset-text-title">入住公社</h2>
+								<p class="base-font-size30 base-margin-top20">呼朋唤友，一起照顾我的宝贝</p>
+							</div>
+							<div class="nset-content nest-padding-left">
+								<button class="btn btn-warning radius88">添加公社身份证</button>
+								<div class="base-img nest-img nest-margin-left">
+									<img src="assets/img/commune1.png">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="tab-panel-item">
+						<div class="nset-content-box">
+							<div class="base-margin-top60 nest-padding-left">
+								<h2 class="nset-text-title">入住公社</h2>
+								<p class="base-font-size30 base-margin-top20">呼朋唤友，一起照顾我的宝贝</p>
+							</div>
+							<div class="nset-content nest-padding-left">
+								<button class="btn btn-warning radius88">添加公社身份证</button>
+								<div class="base-img nest-img nest-margin-left">
+									<img src="assets/img/commune1.png">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- 公用底部 -->
+        <footer class="m-tabbar">
+            <a href="index.html" class="tabbar-item">
+                <span class="tabbar-icon">
+                    <img src="assets/img/tab-home-default.png">
+                </span>
+                <span class="tabbar-txt">首页</span>
+            </a>
+            <a href="community.html" class="tabbar-item tabbar-active">
+                <span class="tabbar-icon">
+                    <img src="assets/img/tab-commune-selected.png">
+                </span>
+                <span class="tabbar-txt">公社</span>
+            </a>
+            <a href="shop.html" class="tabbar-item">
+                <span class="tabbar-icon">
+                    <img src="assets/img/tab-store-default.png">
+                </span>
+                <span class="tabbar-txt">杂货铺</span>
+            </a>
+            <a href="user.html" class="tabbar-item">
+                <span class="tabbar-icon">
+                    <img src="assets/img/tab-mine-default.png">
+                </span>
+                <span class="tabbar-txt">我的</span>
+            </a>
+        </footer>
+
+	</section>
+
+<!-- ================================================================================== -->
+<!-- 引入jQuery 2.0+ -->
+<script src="assets/js/jquery-2.1.4.min.js"></script>
+<!-- 引入YDUI脚本 -->
+<script src="assets/js/ydui.js"></script>
+<!-- 自定义JS -->
+<script>
+    var $tab = $('#J_Tab');
+
+    $tab.tab({
+        nav: '.tab-nav-item',
+        panel: '.tab-panel-item',
+        activeClass: 'tab-active'
+    });
+
+    $tab.find('.tab-nav-item').on('open.ydui.tab', function (e) {
+        console.log('索引：%s - [%s]正在打开', e.index, $(this).text());
+    });
+
+    $tab.find('.tab-nav-item').on('opened.ydui.tab', function (e) {
+        console.log('索引：%s - [%s]已经打开了', e.index, $(this).text());
+    });
+</script>
+</body>
+
+</html>

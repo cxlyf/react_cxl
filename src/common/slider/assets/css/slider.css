@@ -1,0 +1,7 @@
+.cont{width:7.5rem;height:4rem;margin: 0 auto;position: relative;overflow: hidden}
+        .cont a{width: 7.5rem;height:4rem;position: absolute;left:7.5rem;}
+        .cont a:nth-child(1){left:0}
+        .cont img{width: 7.5rem;height:4rem;display: block;}
+        .cont .btns input{width:.5rem;height:.5rem;border: none;background: rgba(250,250,250,0.6);position: absolute;top: 1.5rem;z-index: 2;}
+        #left{left:0;}
+        #right{right:0}

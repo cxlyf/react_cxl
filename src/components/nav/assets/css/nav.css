@@ -1,0 +1,11 @@
+.index-badge {
+    position: absolute;
+    left: 0.16rem;
+    bottom: -0.12rem;
+    z-index: 9;
+    padding: 0.02rem 0.1rem;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 0.3rem;
+}

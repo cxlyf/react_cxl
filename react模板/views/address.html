@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="../assets/css/ydui.css" />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="../assets/js/ydui.flexible.js"></script>
+    <title>ATGS</title>
+</head>
+
+<body>
+
+    <section class="g-flexview">
+
+        <!-- 公用头部 -->
+        <header class="m-navbar">
+            <a href="#" class="navbar-item"><i class="back-ico"></i></a>
+            <div class="navbar-center">
+                <span class="navbar-title">添加收货地址</span>
+            </div>
+        </header>
+
+        <!-- 视图 -->
+        <div class="g-scrollview">
+            <!-- 信息 -->
+            <div class="m-cell">
+                <div class="cell-item">
+                    <div class="cell-left">收货人：</div>
+                    <div class="cell-right">
+                        <input type="text" class="cell-input" placeholder="请输入收货人姓名" />
+                    </div>
+                </div>
+                <div class="cell-item">
+                    <div class="cell-left">联系电话：</div>
+                    <div class="cell-right base-flexbox-content">
+                        18500000001
+                    </div>
+                </div>
+                <div class="cell-item">
+                    <div class="cell-left">所在地区：</div>
+                    <div class="cell-right base-flexbox-content">
+                        <input class="address-ingut" type="text" readonly id="J_Address2" value="点击选择">
+                    </div>
+                </div>
+                <div class="cell-item">
+                    <div class="cell-left">详细地址：</div>
+                    <div class="cell-right">
+                        <input type="text" class="cell-input" placeholder="请输入街道、小区门牌号" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- 按钮 -->
+        <div class="base-padding30">
+            <button type="submit" class="btn-block btn-warning radius88">
+                保存收货地址
+            </button>
+        </div>
+		
+    </section>
+
+    <!-- ================================================================================== -->
+    <!-- 引入jQuery 2.0+ -->
+    <script src="../assets/js/jquery-2.1.4.min.js"></script>
+    <!-- 引入YDUI脚本 -->
+    <script src="../assets/js/ydui.js"></script>
+    <script src="../assets/js/ydui.citys.js"></script>
+    <!-- 自定义JS -->
+    <script>
+        var $target = $('#J_Address2');
+    
+        $target.on('click', function () {
+            $target.citySelect('open');
+        });
+    
+        $target.on('done.ydui.cityselect', function (ret) {
+            $(this).val(ret.provance + ' ' + ret.city + ' ' + ret.area);
+        });
+    </script>
+</body>
+
+</html>

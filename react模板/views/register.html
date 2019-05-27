@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="../assets/css/ydui.css" />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="../assets/js/ydui.flexible.js"></script>
+    <title>ATGS</title>
+</head>
+
+<body>
+
+    <section class="g-flexview">
+
+        <!-- 公用头部 -->
+        <header class="m-navbar">
+            <a href="#" class="navbar-item"><i class="back-ico"></i></a>
+            <div class="navbar-center">
+                <span class="navbar-title">流浪动物救助人认证</span>
+            </div>
+        </header>
+        
+        <div class="g-scrollview">
+            <!-- 信息 -->
+            <div class="m-cell">
+                <div class="cell-item">
+                    <div class="cell-left">姓名：</div>
+                    <div class="cell-right">
+                        <input type="text" class="cell-input" placeholder="请输入姓名" />
+                    </div>
+                </div>
+                <div class="cell-item">
+                    <div class="cell-left">所在地区：</div>
+                    <div class="cell-right base-flexbox-content">
+                        <input class="register-input" type="text" readonly id="J_Address2" value="点击选择">
+                    </div>
+                </div>
+                <div class="cell-item">
+                    <div class="cell-left">救助猫狗数量：</div>
+                    <div class="cell-right">
+                        <input type="number" pattern="[0-9]*" class="cell-input" placeholder="请输入救助数量" autocomplete="off" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="m-cell">
+                <div class="cell-item">
+                    <div class="cell-left">手机号：</div>
+                    <div class="cell-right">
+                        <input type="number" pattern="[0-9]*" class="cell-input" placeholder="请输入手机号码" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="cell-item">
+                    <div class="cell-left">短信验证码：</div>
+                    <div class="cell-right">
+                        <input type="number" pattern="[0-9]*" class="cell-input" placeholder="请输入短信验证码" autocomplete="off" />
+                        <button type="button" class="btn btn-warning" id="J_GetCode">获取短信验证码</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- 按钮 -->
+        <div class="reg-btn">
+            <div class="base-flexbox-align">
+                <p class="base-font-size30">登记手机之后，您将获得</p>
+                <p class="base-font-size26">1.一对一的筹粮顾问服务</p>
+                <p class="base-font-size26">2.免费获得筹粮秘籍</p>
+                <p class="base-font-size26">3.号召大家一起帮助你的机会</p>
+            </div>
+            <button type="submit" class="btn-block btn-warning radius88">
+                确认支付
+            </button>
+        </div>
+		
+    </section>
+
+    <!-- ================================================================================== -->
+    <!-- 引入jQuery 2.0+ -->
+    <script src="../assets/js/jquery-2.1.4.min.js"></script>
+    <!-- 引入YDUI脚本 -->
+    <script src="../assets/js/ydui.js"></script>
+    <script src="../assets/js/ydui.citys.js"></script>
+    <!-- 自定义JS -->
+    <script>
+        var $target = $('#J_Address2');
+    
+        $target.on('click', function () {
+            $target.citySelect('open');
+        });
+    
+        $target.on('done.ydui.cityselect', function (ret) {
+            $(this).val(ret.provance + ' ' + ret.city + ' ' + ret.area);
+        });
+
+        var $getCode = $('#J_GetCode');
+
+        /* 定义参数 */
+        $getCode.sendCode({
+            disClass: 'btn-disabled',
+            secs: 15,
+            run: false,
+            runStr: '{%s}秒后重新获取',
+            resetStr: '重新获取验证码'
+        });
+
+        $getCode.on('click', function () {
+            /* ajax 成功发送验证码后调用【start】 */
+            YDUI.dialog.loading.open('发送中');
+            setTimeout(function(){
+                
+                YDUI.dialog.loading.close();
+                
+                $getCode.sendCode('start');
+                YDUI.dialog.toast('已发送', 'success', 1500);
+                
+            }, 1500);
+        });
+    </script>
+</body>
+
+</html>

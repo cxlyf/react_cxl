@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="../assets/css/ydui.css" />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="../assets/js/ydui.flexible.js"></script>
+    <title>ATGS</title>
+</head>
+
+<body>
+
+    <section class="g-flexview">
+
+        <!-- 公用头部 -->
+        <div class="show-header">
+            <div class="base-flexbox base-bg-transparent">
+                <div class="base-img base-img-80 base-margin-right12">
+                    <img class="radius" src="../assets/img/home-return1.png">
+                </div>
+                <div class="show-header-user">
+                    <div class="base-img base-img-80 base-margin-right12">
+                        <img class="radius" src="../assets/img/nav.jpg">
+                    </div>
+                    <div>
+                        <p class="show-title">猫队长</p>
+                    </div>
+                    <img class="show-header-img" src="../assets/img/pet1.png">
+                </div>
+                <div class="base-flexbox-item">
+                    <button class="show-header-btn">+ 关注</button>
+                </div>
+                <div class="base-flexbox-item">
+                    <div class="base-text-center">
+                        <p class="base-font-size24 other-flex">
+                            <img class="other-flex-img" src="../assets/img/pet2.png">
+                            890
+                        </p>
+                        <p class="base-font-size24">被喜欢数</p>
+                    </div>
+                </div>
+                <div class="base-flexbox-item">
+                    <div class="base-text-center">
+                        <p class="base-font-size24 other-flex">
+                            <img class="other-flex-img" src="../assets/img/pet3.png">
+                            265
+                        </p>
+                        <p class="base-font-size24">被关注数</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="base-flexbox base-padding30 base-bg-yellow">
+            <div class="base-flexbox-item">
+                <p class="base-font-size30">干爹干妈</p>
+            </div>
+            <div class="show-head">
+                <div class="base-img base-img-80">
+                    <img class="radius" src="../assets/img/nav.jpg">
+                </div>
+                <div class="base-img base-img-80">
+                    <img class="radius" src="../assets/img/nav.jpg">
+                </div>
+                <div class="base-img base-img-80">
+                    <img class="radius" src="../assets/img/nav.jpg">
+                </div>
+                <div class="base-img base-img-80">
+                    <img class="radius" src="../assets/img/nav.jpg">
+                </div>
+                <div class="base-img base-img-80">
+                    <img class="radius" src="../assets/img/nav.jpg">
+                </div>
+                <div class="base-img base-img-80">
+                    <img class="radius" src="../assets/img/nav.jpg">
+                </div>
+            </div>
+        </div>
+
+        <!-- 视图 -->
+        <div class="g-scrollview">
+            <!-- 选项卡 -->
+            <div id="J_Tab" class="m-tab">
+                <ul class="tab-nav">
+                    <li class="tab-nav-item tab-active"><a href="javascript:;">表情秀</a></li>
+                    <li class="tab-nav-item"><a href="javascript:;">私密小窝</a></li>
+                </ul>
+                <div class="tab-panel">
+                    <div class="tab-panel-item base-padding tab-active">
+
+                        <img class="cat-img" src="../assets/img/pet20.png">
+                        <p class="base-font-size30 cat-text">
+                            小窝里发的都是我每天开心和难过的日记，只有喂养了我成为我的干爹干妈，才能进入我的小窝哦！点我
+                            <button>马上喂养~</button>
+                        </p>
+
+                    </div>
+                    <div class="tab-panel-item">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 公用底部 -->
+        <footer class="m-tabbar">
+            <a href="index.html" class="tabbar-item">
+                <span class="tabbar-icon">
+                    <img src="../assets/img/tab-home-default.png">
+                </span>
+                <span class="tabbar-txt">首页</span>
+            </a>
+            <a href="community.html" class="tabbar-item">
+                <img class="show-tabbar-img" src="../assets/img/pet12.png">
+            </a>
+            <a href="user.html" class="tabbar-item">
+                <span class="tabbar-icon">
+                    <img src="../assets/img/tab-mine-default.png">
+                </span>
+                <span class="tabbar-txt">我的</span>
+            </a>
+        </footer>
+
+    </section>
+
+    <!-- ================================================================================== -->
+    <!-- 引入jQuery 2.0+ -->
+    <script src="../assets/js/jquery-2.1.4.min.js"></script>
+    <!-- 引入YDUI脚本 -->
+    <script src="../assets/js/ydui.js"></script>
+    <!-- 自定义JS -->
+    <script>
+        var $tab = $('#J_Tab');
+
+        $tab.tab({
+            nav: '.tab-nav-item',
+            panel: '.tab-panel-item',
+            activeClass: 'tab-active'
+        });
+
+        $tab.find('.tab-nav-item').on('open.ydui.tab', function (e) {
+            console.log('索引：%s - [%s]正在打开', e.index, $(this).text());
+        });
+
+        $tab.find('.tab-nav-item').on('opened.ydui.tab', function (e) {
+            console.log('索引：%s - [%s]已经打开了', e.index, $(this).text());
+        });
+    </script>
+</body>
+
+</html>

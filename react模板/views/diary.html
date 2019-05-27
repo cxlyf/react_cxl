@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="../assets/css/ydui.css" />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="../assets/js/ydui.flexible.js"></script>
+	<title>ATGS</title>
+</head>
+
+<body>
+	<section class="g-flexview">
+
+		<header class="m-navbar">
+			<a href="#" class="navbar-item">
+				<i class="back-ico"></i>
+			</a>
+			<div class="navbar-center">
+				<span class="navbar-title">写日记</span>
+			</div>
+		</header>
+
+		<div class="g-scrollview">
+			<!-- 表头 -->
+			<div class="base-flexbox base-padding30">
+				<div class="base-flexbox base-flexbox-item">
+					<div class="base-img base-img-60 base-margin-right12">
+						<img class="radius" src="../assets/img/nav.jpg">
+					</div>
+					<p class="base-font-size30">奶油</p>
+				</div>
+				<div class="base-flexbox-item">
+					<p class="base-font-size26 base-text-right">2018年02月24日</p>
+				</div>
+			</div>
+
+			<!-- 文本框 -->
+			<div class="m-cell base-margin-top20">
+				<div class="cell-item">
+					<div class="cell-right">
+						<textarea class="cell-textarea" placeholder="记录今天的宝贝…"></textarea>
+					</div>
+				</div>
+			</div>
+
+			<!-- 上传 -->
+			<div class="base-flexbox base-flexbox-wrap base-padding30">
+				<div class="base-img base-img-220">
+					<img src="../assets/img/pet19.png" >
+				</div>
+			</div>
+
+		</div>
+
+		<!-- 按钮 -->
+		<div class="base-padding30">
+			<p class="base-font-size26">提示：</p>
+			<p class="base-font-size26 base-margin-top20">铲屎官可以发布宝贝今天在干嘛，亲友圈也可以发布消息询问宝贝情况；</p>
+			<p class="base-font-size26 base-margin-top20">每天前3个人发布，每个人可以为宝贝分别增加5G能量罐头；</p>
+			<button type="submit" class="btn-block btn-warning radius88">
+				付款
+			</button>
+		</div>
+		
+
+	</section>
+
+<!-- ================================================================================== -->
+<!-- 引入jQuery 2.0+ -->
+<script src="../assets/js/jquery-2.1.4.min.js"></script>
+<!-- 引入YDUI脚本 -->
+<script src="../assets/js/ydui.js"></script>
+<script src="../assets/js/ydui.citys.js"></script>
+<!-- 自定义JS -->
+<script>
+	var $target = $('#J_Address2');
+
+	$target.on('click', function () {
+		$target.citySelect('open');
+	});
+
+	$target.on('done.ydui.cityselect', function (ret) {
+		$(this).val(ret.provance + ' ' + ret.city + ' ' + ret.area);
+	});
+</script>
+</body>
+
+</html>

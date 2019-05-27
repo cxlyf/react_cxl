@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+	<meta content="yes" name="apple-mobile-web-app-capable" />
+	<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	<meta content="telephone=no" name="format-detection" />
+	<!-- 引入YDUI样式 -->
+    <link rel="stylesheet" href="assets/css/ydui.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <!-- 引入YDUI自适应解决方案类库 -->
+    <script src="assets/js/ydui.flexible.js"></script>
+	<title>ATGS</title>
+</head>
+
+<body>
+<section >
+
+ <div class="sepc_bg">
+  <div style="margin-top:1%; overflow:hidden"></div>
+  <div class="sepc_bg1">
+   <!--inf-->
+   <div class="indf_main">
+    
+     <div class="us_r1">
+      <dl>
+       <dt><img src="assets/img/nav.jpg"></dt>
+       <dd>天天券</dd>
+      </dl>
+     </div>
+   
+     
+     <div class="img_r">
+      <ol>
+       <img src="assets/img/nav.jpg">
+      </ol>
+     
+     </div>
+      <div class="font_lisr">
+       干爹干嘛<br>
+       我饿了，快来喂我吧
+      </div>
+      
+      <div class="er_m">
+       <dl>
+                  <dt><img src="assets/img/erweima.jpg"></dt>
+                  <dd>
+                  长按二维码<br>给它们喂食
+                  </dd>
+                 </dl>
+      </div>
+     
+     </div>
+    
+ 
+   
+   
+  <!--花纹-->
+   <div class="sp_r1"><img src="assets/img/beijing_r2_c2.png"></div>
+   <div class="sp_r2"><img src="assets/img/beijing_r4_c21.png"></div>
+   <div class="sp_r3"><img src="assets/img/beijing_r4_c61.png"></div>
+   <div class="sp_r4"><img src="assets/img/beijing_r4_c2.png"></div>
+   
+  </div>
+   
+   
+   <div style=" padding-bottom:1%; overflow:hidden"> </div>
+ </div>
+
+</section>
+
+<!-- ================================================================================== -->
+<!-- 引入jQuery 2.0+ -->
+<script src="assets/js/jquery-2.1.4.min.js"></script>
+<!-- 引入YDUI脚本 -->
+<script src="assets/js/ydui.js"></script>
+<!-- 自定义JS -->
+<script>
+    var $tab = $('#J_Tab');
+
+    $tab.tab({
+        nav: '.tab-nav-item',
+        panel: '.tab-panel-item',
+        activeClass: 'tab-active'
+    });
+
+    $tab.find('.tab-nav-item').on('open.ydui.tab', function (e) {
+        console.log('索引：%s - [%s]正在打开', e.index, $(this).text());
+    });
+
+    $tab.find('.tab-nav-item').on('opened.ydui.tab', function (e) {
+        console.log('索引：%s - [%s]已经打开了', e.index, $(this).text());
+    });
+</script>
+</body>
+
+</html>
